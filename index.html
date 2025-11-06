@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Recipe Chatbot</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app" role="application" aria-label="Recipe Chatbot">
+    <div class="panel" id="left">
+      <div class="header">
+        <div class="logo">RC</div>
+        <div class="title">
+          <h1>Recipe Chatbot</h1>
+          <p>Ask for recipe ingredients or tell me what you have</p>
+        </div>
+        <div style="margin-left:auto">
+          <button type="button" class="small" id="clearBtn" title="Clear chat">Clear</button>
+        </div>
+      </div>
+
+      <div class="chat" id="chat" aria-live="polite"></div>
+
+      <div class="input-row">
+        <input id="userInput" type="text" placeholder="Type: 'Pancakes' or 'I have eggs, milk' or 'Add recipe: ...'"/>
+        <button type="button" id="sendBtn" class="btn">Send</button>
+      </div>
+      <div class="muted" style="margin-top:6px">
+        Tips: "What are the ingredients for omelette", "I have eggs, tomato, cheese", 
+        "Add recipe: name=French Toast; ingredients=2 eggs|1 cup milk|4 slices bread"
+      </div>
+    </div>
+
+    <div class="side" id="right">
+      <h3>Recipes (click to ask)</h3>
+      <div class="recipes" id="recipesList"></div>
+
+      <h3>Add new recipe</h3>
+      <div class="form">
+        <input id="newName" placeholder="Recipe name (e.g., Banana Pancake)" />
+        <textarea id="newIngredients" rows="3" placeholder="One per line, format: ingredient - amount
+          Example:
+          flour - 1 cup
+          banana - 1"></textarea>
+        <button type="button" id="addRecipeBtn" class="btn">Add recipe</button>
+      </div>
+
+      <footer>Suggestions: type ingredient lists, recipe names, or use the Add form.</footer>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
